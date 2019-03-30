@@ -1,75 +1,34 @@
-.app-container {
-  margin: 0 auto;
-  max-width: 620px;
-  background: #1aa3ff;
-  color: white;
-  font-family: "Comic Sans MS", cursive, sans-serif;
-  display: flex;
-  flex-direction: column;
+#page-header {
+  width: 100%;
+  background: white;
+  bottom: 0;
+  height: 200px;
+  top: 0;
+  display: inline-block;
+}
+#form-input,
+#logo{
+  position: absolute;
+  left: 1.6%;
+  right: 86.32%;
+  top: 1.95%;
+  bottom: 93.75%;
 }
 
-.app-title {
-  margin: 0 auto;
-  padding-top: 10px;
+#form-input {
+  position: absolute;
+top:1.95%;
+  bottom:92.75%;
+left: 24%;
+  height: 40px;
+width: 582px;
+  background: linear-gradient(0deg, #F6F6F6, #F6F6F6), #FEFEFE;
+  border: 1px solid #E2E2E2;
+  box-sizing: border-box;
+  box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
 }
+#ilustration{
 
-.todo-list {
-  padding: 0;
-  list-style-type: none;
-}
 
-.todo-item {
-  border: 3px solid  #ff80df;
-  margin: 5px;
-  width: inherit;
-  display: flex;
-  justify-content: space-between;
-}
-
-.todo-text {
-  word-break: break-all;
-  margin-right: 10px;
-  padding: 5px;
-}
-
-.delete-button {
-  background: unset;
-  border: unset;
-  cursor: pointer;
-}
-
-.delete-icon {
-  color: #ffdb4d;
-  font-size: 18px;
-  padding-right: 10px;
-}
-
-.todo-form {
-  margin: 10px;
-}
-
-.form-input {
-  border: unset;
-  border-radius: 5px;
-  padding: 5px;
-  width: 350px;
-  font-size: 18px;
-}
-
-.add-btn {
-  width: 50px;
-  height: 30px;
-  margin: 10px;
-  border: unset;
-  border-radius: 10px;
-  cursor: pointer;
-  text-transform: uppercase;
-  color: white;
-  font-size: 16px;
-  background-color: #8533ff;
-  font-weight: 600;
-}
-
-.add-btn:disabled {
-  cursor: not-allowed;
 }

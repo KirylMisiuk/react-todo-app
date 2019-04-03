@@ -1,25 +1,19 @@
+/*Header*/
 #page-header {
   width: 100%;
   background: white;
   bottom: 0;
-  height: 200px;
+  height: 70px;
   top: 0;
   display: inline-block;
 }
-#form-input,
 #logo{
   position: absolute;
-  left: 1.6%;
-  right: 86.32%;
-  top: 1.95%;
-  bottom: 93.75%;
+margin: 20px 960px 1243px 23px ;
 }
-
 #form-input {
   position: absolute;
-top:1.95%;
-  bottom:92.75%;
-left: 24%;
+    margin: 22px 962px 641px 217px ;
   height: 40px;
 width: 582px;
   background: linear-gradient(0deg, #F6F6F6, #F6F6F6), #FEFEFE;
@@ -28,6 +22,128 @@ width: 582px;
   box-shadow: inset 2px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 4px;
 }
-#ilustration{
+/*Navigation*/
+#navigation {
+  display: flex;
+  flex-direction: column;
+margin-left: 30px;
+}
+#navigation ul li {
 
+  display: inline-block;
+  padding: 3px 120px 0 0px;
+  border-top: 3px solid #F2F2F2;
+  font-family: Roboto, sans-serif;
+  font-style: normal;
+  font-weight: 100;
+  font-size: 30px;
+    text-align: center;
+}
+#navigation ul li button {
+  text-decoration: none;
+  color: #7D7C7D;
+    height: 30px;
+    width: 135px;
+    background: white;
+    text-align: center;
+    outline:none;
+    border: none;
+}
+li button.active {
+  border-top: 4px solid #2F80ED;
+  font-weight:bold;
+  padding: 0.1em 0.1em;
+}
+li button:hover {
+  color: #0e0b2b;
+}
+/*NewTask*/
+#task{
+    position: absolute;
+  left: 1.6%;
+  right: 86.32%;
+  top: 15.92%;
+  bottom: 73.44%;
+}
+ #task #text{
+  position: absolute;
+  width: 80px;
+  height: 16px;
+     margin: 60px 845px  1363px 47px;
+  font-family: Salesforce Sans, serif;
+   white-space:nowrap;
+   font-size: 12px;
+  line-height: normal;
+  color: #706E6B;
+}
+ #task #input{
+     position: absolute;
+     margin: 62px 752px 634px 47px;
+     height: 90px;
+     width: 759px;
+   top: 19px;
+   background: #FFFFFF;
+   border: 1px solid #DDDBDA;
+   box-sizing: border-box;
+   border-radius: 4px;
+
+ }
+.add-btn {
+    position: absolute;
+    width: 191px;
+    height: 36px;
+    margin: 173px 705px 634px 615px;
+    border: unset;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: white;
+    font-size: 16px;
+    background-color: #191dff;
+    font-weight: 600;
+}
+.add-btn:disabled {
+    cursor: not-allowed;
+}
+#taking-notes{
+    position: absolute;
+    margin: 108px 71px 6px 531px;
+
+}
+.todo-list {
+    padding: 200px 200px 200px 70px;
+    list-style-type: none;
+}
+
+.todo-item {
+    position: relative;
+    border: 1px solid #DDDBDA;
+    height: 90px;
+    width: 759px;
+    display: flex;
+    margin: 5px;
+    justify-content: space-between;
+    background: #ffffff;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+}
+
+.todo-text {
+    word-break: break-all;
+}
+.favorite-button{
+    height: 36px;
+    width: 183px;
+    border-radius: 10px;
+    color:white;
+;
+}
+.delete-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 50px;
+}
+.buttons-container{
+   margin: 11px 58px 507px 12px;
+    display: inline-block;
+    outline: none;
 }

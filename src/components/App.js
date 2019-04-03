@@ -8,7 +8,7 @@ import Header from "./header";
 export class App extends PureComponent {
     state = {
         todos: [],
-        tab: 'All'
+        li: 'All'
     };
 
     componentDidMount() {
@@ -28,7 +28,7 @@ export class App extends PureComponent {
     }
 
     handleSubmitButton = value => this.setState(({todos}) => ({todos: [value, ...todos]}));
-    handleNavButtons = value => this.setState(({tab: value}));
+    handleNavButtons = value => this.setState(({li: value}));
     handleDoneTodo = id => this.setState(({todos}) => ({
         todos: todos.map((todo) => {
             let done = todo.done;
@@ -39,7 +39,32 @@ export class App extends PureComponent {
             };
         })
     }));
+    handleFilterSearch = (value) => {
+        console.log(value);
+        const {todos} = this.state;
+        const a = [...todos];
+        this.setState({
+            todos: a.map((t) => {
+                let flag = false;
+                (t.todo.indexOf(value) !== -1) ? flag = true : flag = false;
+                return {
+                    ...t,
+                    search: flag
+                };
+            })
+        });
+        this.setState({tab: 'Search'});
+        if (value === '') {
+            this.setState({todos: a.map(t => ({...t, search: false}))});
+            this.setState({tab: 'All'});
+        }
 
+        this.setState({li: 'Search'});
+        if (value === '') {
+            this.setState({todos: a.map(t => ({...t, search: false}))});
+            this.setState({li: 'All'});
+        }
+    };
 
     handleFavoriteTodo = id => this.setState(({todos}) => ({
         todos: todos.map((todo) => {
@@ -77,12 +102,12 @@ export class App extends PureComponent {
 
     render() {
 
-        const {todos, tab} = this.state;
-        let tabsTask = [];
-        if (tab === 'All') tabsTask = todos;
-        if (tab === 'Active') tabsTask = todos.filter(value => !value.done);
-        if (tab === 'Done') tabsTask = todos.filter(value => value.done);
-        if (tab === 'Search') tabsTask = todos.filter(value => value.search);
+        const {todos, li} = this.state;
+        let liArr = [];
+        if (li === 'All') liArr = todos;
+        if (li === 'Active') liArr = todos.filter(value => !value.done);
+        if (li === 'Done') liArr = todos.filter(value => value.done);
+        if (li === 'Search') liArr = todos.filter(value => value.search);
         return (
             <div>
                 <Header onSearch={this.handleFilterSearch}/>
@@ -91,14 +116,14 @@ export class App extends PureComponent {
                 <NewTask onSubmit={this.handleSubmitButton}/>
                 <div id='list-container'>
                     <ul className="todo-list">
-                        {tabsTask.map(todo => (
+                        {liArr.map(todo => (
                             <TodoItem
                                 key={todo.id}
                                 favorite={todo.favorite}
                                 done={todo.done}
-                                toggleFavoriteButton={this.handleFavoriteTodo}
                                 toggleDeleteButton={this.handleDeleteTodo}
                                 toggleDoneButton={this.handleDoneTodo}
+                                toggleFavoriteButton={this.handleFavoriteTodo}
                                 {...todo}
                             />
                         ))}

@@ -7,7 +7,6 @@ export class Nav extends PureComponent {
     };
     handleAllButton = () => {
         const {nav} = this.props;
-
         nav('All');
     };
 
@@ -23,7 +22,9 @@ export class Nav extends PureComponent {
 
     render() {
         return (
+
             <nav id='navigation'>
+                <hr/>
                 <ul>
                     <li key='All'>
                         <button className='active' onClick={this.handleAllButton}>All</button>
@@ -35,6 +36,7 @@ export class Nav extends PureComponent {
                         <button onClick={this.handleDoneButton}>Done</button>
                     </li>
                 </ul>
+
             </nav>
 
         )

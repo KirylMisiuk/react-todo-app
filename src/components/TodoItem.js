@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './styles.css';
+import logo from "../images/Delete.png";
 
 
 class TodoItem extends React.PureComponent {
@@ -51,18 +52,20 @@ class TodoItem extends React.PureComponent {
 
                 <li className="todo-text" onClick={this.handleDoneButton}
                     style={{
+                        fontWeight: favorite ? 'bolder' : 'normal',
+                        fontFamily: favorite ? 'Verdana' : 'Arial',
                         textDecoration: done ? 'line-through' : 'none',
-                    }}>  {favorite && <i className="far fa-star"/>}{todo}</li>
-                <div className='buttons-container'>
-                    {inside && <button type="button" className="favorite-button" onClick={this.handleFavoriteButton}
-                                       style={{
-                                           background: favorite ? 'rgba(116, 118, 122, 0.22)' : 'rgba(11, 255, 15, 0.87)'
-                                       }}
-                    >{text}</button>}
-                    {inside && <button type="button" className="delete-button" onClick={this.handleDeleteButton}><i
-                        className="fas fa-trash-alt delete-icon"/></button>}
-                </div>
+                    }}>  {favorite && <i className="far fa-star"/>} {todo}</li>
+
+                {inside && <button type="button" className="favorite-button" onClick={this.handleFavoriteButton}
+                                   style={{
+                                       background: favorite ? 'rgba(116, 118, 122, 0.22)' : 'rgba(11, 255, 15, 0.87)'
+                                   }}
+                >{text}</button>}
+                {inside && <img type="button" id='logo' src={logo} alt='logo' className="delete-button"
+                                onClick={this.handleDeleteButton}></img>}
             </div>
+
 
         );
     }

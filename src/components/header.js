@@ -5,8 +5,12 @@ export class Header extends PureComponent {
     state = {
         search: ''
     };
-
-    handleChangeSearch = e => this.setState({[e.target.name]: e.target.value})
+    handleChangeInput = (e) => {
+        console.log(e.target);
+        this.setState({[e.target.name]: e.target.value});
+        const {onSearch} = this.props;
+        onSearch(e.target.value);
+    };
 
 
     render() {
@@ -21,10 +25,10 @@ export class Header extends PureComponent {
                 <input id='form-input'
                        value={search}
                        type="text"
-                       name="todo"
-                       maxLength="50"
-                       onChange={this.handleChangeSearch}
-                       placeholder="Find Todo"
+                       name="search"
+                       maxLength="120"
+                       onChange={this.handleChangeInput}
+                       placeholder="What should I do?"
                        className="form-input"
                 />
             </header>
